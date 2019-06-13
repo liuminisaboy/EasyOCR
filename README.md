@@ -1,4 +1,4 @@
-# OpenCV+TesseractOCRiOS识别 和 百度文字识别
+# OpenCV+TesseractOCRiOS识别
 
 OpenCV库太大无法上传，需要先用 pod 导入以下库再运行 
 

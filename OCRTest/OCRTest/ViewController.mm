@@ -9,8 +9,7 @@
 #import "ViewController.h"
 #import "ScanningViewController.h"
 
-//百度识别
-#import <AipOcrSdk/AipOcrSdk.h>
+
 
 //opencv 图像处理
 #import <opencv2/opencv.hpp>
@@ -42,12 +41,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [[AipOcrService shardService] authWithAK:@"IvKmRGnRt9jE8PkrTRG9Gjvk" andSK:@"n37AtO32bPO1qVhBGzmeX0eqPO2Cr5g3"];
 
     
     /*
      
-     百度文字识别文档 http://ai.baidu.com/docs#/OCR-iOS-SDK/top
      
      opencv 图像处理 https://github.com/Haloing/IDCNRecognize/blob/master/OpencvDemo/ViewController.mm
      本地识别库 https://github.com/gali8/Tesseract-OCR-iOS
@@ -65,9 +62,6 @@
     [vc addAction:[UIAlertAction actionWithTitle:@"OpenCV + TesseractOCRiOS 识别" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self identifyWithType:1];
     }]];
-    [vc addAction:[UIAlertAction actionWithTitle:@"百度文字识别" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self identifyWithType:0];
-    }]];
     
     [self presentViewController:vc animated:YES completion:nil];
 }
@@ -82,7 +76,6 @@
         
         if (type == 0) {
             self.catchImageView.image = img;
-            [self detectTextWithImage:img];
         }else {
             UIImage* tmpimg = [self opencvScanCard:img];
             self.catchImageView.image = tmpimg;
@@ -91,42 +84,6 @@
         
     }];
     
-}
-
-#pragma mark - 百度识别
-- (void)detectTextWithImage:(UIImage*)image{
-    
-    [[AipOcrService shardService] detectTextBasicFromImage:image withOptions:@{@"language_type": @"CHN_ENG", @"detect_direction": @"true"} successHandler:^(id result) {
-        //
-        NSMutableString* message = [NSMutableString string];
-        NSString* code = @"";
-        if (result[@"words_result"]) {
-            NSArray* wordsresult = result[@"words_result"];
-            for (int i = 0; i<wordsresult.count; i++) {
-                NSDictionary* itemdic = wordsresult[i];
-                NSString* words = itemdic[@"words"];
-                [message appendFormat:@"%@ \n",words];
-                if ([words containsString:@"激活码:"]) {
-                    NSLog(@"激活码 %@",words);
-                    code = [words substringFromIndex:4];
-                }
-            }
-        }else{
-            [message appendFormat:@"未识别到内容"];
-        }
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.resultField.text = code;
-        });
-        
-    } failHandler:^(NSError *err) {
-        //
-        NSLog(@"识别失败 %@",err);
-        UIAlertController* vc = [UIAlertController alertControllerWithTitle:@"error" message:[err description] preferredStyle:UIAlertControllerStyleAlert];
-        [vc addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleCancel handler:nil]];
-        [self presentViewController:vc animated:YES completion:nil];
-    }];
 }
 
 #pragma mark - OpenCV + TesseractOCRiOS 本地识别

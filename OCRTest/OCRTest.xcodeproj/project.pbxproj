@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		202CEBAC22A7571000D539FE /* ScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202CEBAB22A7571000D539FE /* ScanningViewController.m */; };
 		202CEBAF22A7633D00D539FE /* LFCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 202CEBAE22A7633D00D539FE /* LFCamera.m */; };
-		202CEBB322A76C8D00D539FE /* AipBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202CEBB022A76C8D00D539FE /* AipBase.framework */; };
-		202CEBB422A76C8D00D539FE /* AipBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 202CEBB022A76C8D00D539FE /* AipBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		202CEBB522A76C8D00D539FE /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202CEBB122A76C8D00D539FE /* AipOcrSdk.framework */; };
-		202CEBB622A76C8D00D539FE /* AipOcrSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 202CEBB122A76C8D00D539FE /* AipOcrSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		202CEBB722A76C8D00D539FE /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202CEBB222A76C8D00D539FE /* IdcardQuality.framework */; };
-		202CEBB822A76C8D00D539FE /* IdcardQuality.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 202CEBB222A76C8D00D539FE /* IdcardQuality.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20B3BAB222A6113400E1D262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B3BAB122A6113400E1D262 /* AppDelegate.m */; };
 		20B3BAB522A6113400E1D262 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20B3BAB422A6113400E1D262 /* ViewController.mm */; };
 		20B3BAB822A6113400E1D262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B3BAB622A6113400E1D262 /* Main.storyboard */; };
@@ -52,9 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				202CEBB422A76C8D00D539FE /* AipBase.framework in Embed Frameworks */,
-				202CEBB622A76C8D00D539FE /* AipOcrSdk.framework in Embed Frameworks */,
-				202CEBB822A76C8D00D539FE /* IdcardQuality.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,9 +57,6 @@
 		202CEBAB22A7571000D539FE /* ScanningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanningViewController.m; sourceTree = "<group>"; };
 		202CEBAD22A7633D00D539FE /* LFCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCamera.h; sourceTree = "<group>"; };
 		202CEBAE22A7633D00D539FE /* LFCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCamera.m; sourceTree = "<group>"; };
-		202CEBB022A76C8D00D539FE /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipBase.framework; sourceTree = "<group>"; };
-		202CEBB122A76C8D00D539FE /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipOcrSdk.framework; sourceTree = "<group>"; };
-		202CEBB222A76C8D00D539FE /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
 		20B3BAAD22A6113400E1D262 /* OCRTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B3BAB022A6113400E1D262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20B3BAB122A6113400E1D262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,10 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202CEBB322A76C8D00D539FE /* AipBase.framework in Frameworks */,
 				45A815F34CD01544AFE95EB9 /* libPods-OCRTest.a in Frameworks */,
-				202CEBB522A76C8D00D539FE /* AipOcrSdk.framework in Frameworks */,
-				202CEBB722A76C8D00D539FE /* IdcardQuality.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,9 +109,6 @@
 		20B3BAA422A6113400E1D262 = {
 			isa = PBXGroup;
 			children = (
-				202CEBB022A76C8D00D539FE /* AipBase.framework */,
-				202CEBB122A76C8D00D539FE /* AipOcrSdk.framework */,
-				202CEBB222A76C8D00D539FE /* IdcardQuality.framework */,
 				20B3BAAF22A6113400E1D262 /* OCRTest */,
 				20B3BAC822A6113900E1D262 /* OCRTestTests */,
 				20B3BAD322A6113900E1D262 /* OCRTestUITests */,
